@@ -1,0 +1,16 @@
+#!/usr/bin/perl -w
+
+use esmith::Build::CreateLinks qw(:all);
+
+#--------------------------------------------------
+## functions for manager panel
+##--------------------------------------------------
+
+my $event = 'nethserver-yum-cron-update';
+event_actions ( $event, 'initialize-default-databases' => '00');
+
+#Template to expand
+templates2events("/etc/yum/yum-cron.conf", qw ( 
+    nethserver-yum-cron-update
+    nethserver-yum-cron-save
+    ));
