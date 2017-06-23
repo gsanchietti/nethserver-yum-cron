@@ -10,7 +10,13 @@ my $event = 'nethserver-yum-cron-update';
 event_actions ( $event, 'initialize-default-databases' => '00');
 
 #Template to expand
-templates2events("/etc/yum/yum-cron.conf", qw ( 
+templates2events("/etc/sysconfig/yum-cron", qw ( 
     nethserver-yum-cron-update
     nethserver-yum-cron-save
     ));
+
+# services to launch on event
+foreach my $event (qw (nethserver-yum-cron-save nethserver-yum-cron-update)) {
+event_services($event,
+    'yum-cron'=> 'restart');
+}
