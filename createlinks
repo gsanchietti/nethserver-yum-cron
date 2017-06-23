@@ -14,3 +14,9 @@ templates2events("/etc/yum/yum-cron.conf", qw (
     nethserver-yum-cron-update
     nethserver-yum-cron-save
     ));
+
+# services to launch on event
+foreach my $event (qw (nethserver-yum-cron-save nethserver-yum-cron-update)) {
+event_services($event,
+    'yum-cron'=> 'restart');
+}

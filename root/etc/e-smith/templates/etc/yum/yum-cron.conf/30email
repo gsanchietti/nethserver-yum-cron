@@ -7,14 +7,14 @@ email_from = root@{$DomainName}
 {
     use Email::Valid;
     my @customMail;
-    foreach my $email (split(/,/, ($yumCron{customMail} || ''))) {
+    foreach my $email (split(/,/, (${'yum-cron'}{'customMail'} || ''))) {
     push @customMail , $email if (Email::Valid->address($email));
     #sort email array
     %seen = ();
     @customMail = sort (grep { ! $seen{ $_ }++ } (@customMail));
     }
 
-    $OUT .= "email_to = admin\@$DomainName " . @customemail;
+    $OUT .= "email_to = admin\@$DomainName " . join (' ',@customMail);
 }
 
 # Name of the host to connect to to send email messages.

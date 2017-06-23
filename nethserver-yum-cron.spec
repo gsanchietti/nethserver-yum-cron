@@ -1,7 +1,7 @@
 Summary: nethserver - configure yum-cron
 %define name nethserver-yum-cron
 Name: %{name}
-%define version 0.1.0
+%define version 0.1.1
 %define release 1
 Version: %{version}
 Release: %{release}%{?dist}
@@ -18,7 +18,7 @@ BuildArch: noarch
 configure yum-cron for automatic update
 
 %changelog
-* Fri Jun 23 2017 stephane de Labrusse <stephdl@de-labrusse.fr>
+* Fri Jun 23 2017 stephane de Labrusse <stephdl@de-labrusse.fr> 0.1.1-1.ns7
 - initial
 
 %prep
@@ -37,7 +37,7 @@ rm -f %{name}-%{version}-%{release}-filelist
 
 %post
 /usr/bin/systemctl enable yum-cron
-/usr/bin/systemctl start  yum-cron
+#/usr/bin/systemctl start  yum-cron
 
 %postun
 /usr/bin/systemctl disable yum-cron
