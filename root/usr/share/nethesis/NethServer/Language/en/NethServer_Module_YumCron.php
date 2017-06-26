@@ -1,7 +1,6 @@
 <?php
 $L['valid_mailforward_address'] = '"${0}" is not a valid email address';
-$L['status_label'] = 'Status';
-$L['messages_label'] = 'Send notifications';
+$L['messages_label'] = 'Send an email to the system administrator';
 $L['download_label'] = 'Download updates';
 $L['applyUpdate_label'] = 'Install updates automatically';
 $L['customMail_label'] = 'Add custom recipients';
@@ -14,3 +13,4 @@ $L['security-severity:Critical'] = 'security-severity:Critical';
 $L['minimal'] = 'minimal';
 $L['minimal-security'] = 'minimal-security';
 $L['minimal-security-severity:Critical'] = 'minimal-security-severity:Critical';
+$L['WhenUpdatesAreAvailable'] = 'When Updates are available';
