@@ -11,7 +11,7 @@ echo $view->panel()
 
 ->insert($view->fieldsetSwitch('messages', 'yes', $view::FIELDSETSWITCH_CHECKBOX | $view::FIELDSETSWITCH_EXPANDABLE)
     ->setAttribute('uncheckedValue', 'no')
-    ->insert($view->textArea('customMail', $view::LABEL_ABOVE)->setAttribute('dimensions', '10x30')))
+    ->insert($view->textArea('customMail', $view::LABEL_ABOVE)->setAttribute('dimensions', '5x30')))
 ;
 
 echo $view->buttonList($view::BUTTON_SUBMIT | $view::BUTTON_HELP);
