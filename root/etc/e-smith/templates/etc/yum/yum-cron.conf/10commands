@@ -25,6 +25,6 @@ apply_updates = {${'yum-cron'}{'applyUpdate'} || 'no'}
 # times that multiple systems will access update servers.  If
 # random_sleep is 0 or negative, the program will run immediately.
 # 6*60 = 360
-random_sleep = 60
+random_sleep = 360
 
 
