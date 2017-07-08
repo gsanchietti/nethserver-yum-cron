@@ -73,7 +73,7 @@ else {
 # randomwait is used by yum to wait random time
 # default is 60 so yum waits random time from 1 to 60 minutes
 # the value must not be zero
-RANDOMWAIT="60"
+RANDOMWAIT="{${'yum-cron'}{'randomWait'}||'60'}"
 
 # if MAILTO is set and the mail command is available, the mail command 
 # is used to deliver yum output

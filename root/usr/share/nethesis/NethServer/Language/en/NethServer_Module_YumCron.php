@@ -11,3 +11,4 @@ $L['customParam_label'] = 'Exclude packages only from yum-cron';
 $L['Download_Only'] = 'Download updates';
 $L['yumAction_label'] = 'Yum action to perform';
 $L['UseWildCard'] = 'You can exclude rpm with *';
+$L['YumCron_Description'] = 'An interface to conveniently call yum from cron';
