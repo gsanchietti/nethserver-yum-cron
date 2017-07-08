@@ -14,3 +14,4 @@ $L['minimal'] = 'minimal';
 $L['minimal-security'] = 'minimal-security';
 $L['minimal-security-severity:Critical'] = 'minimal-security-severity:Critical';
 $L['WhenUpdatesAreAvailable'] = 'When Updates are available';
+$L['YumCron_Description'] = 'An interface to conveniently call yum from cron';
