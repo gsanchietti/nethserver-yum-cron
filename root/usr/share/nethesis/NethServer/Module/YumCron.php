@@ -61,7 +61,18 @@ class YumCron extends \Nethgui\Controller\Collection\AbstractAction //implements
                     }
                 }
             }
-   }
+
+            $forwards = $this->parameters['customParam'];
+            if($forwards) {
+                $paramValidator = $this->createValidator(Validate::USERNAME);
+                foreach(explode(',', $forwards) as $param) {
+                    if( !$paramValidator->evaluate($param)) {
+                        $report->addValidationErrorMessage($this, 'customParam',
+                            'valid_Custom_Package_Exclusion', array($param));
+                    }
+                }
+            }
+    }
 
     public function prepareView(\Nethgui\View\ViewInterface $view)
     {

@@ -1,7 +1,7 @@
 Summary: nethserver - configure yum-cron
 %define name nethserver-yum-cron
 Name: %{name}
-%define version 0.0.3
+%define version 0.0.4
 %define release 1
 Version: %{version}
 Release: %{release}%{?dist}
@@ -18,6 +18,9 @@ BuildArch: noarch
 configure yum-cron for automatic update
 
 %changelog
+* Wed Jul 12 2017 stephane de Labrusse <stephdl@de-labrusse.fr> 0.0.4-1.ns6
+- Sanitise the custom yum exclusion
+
 * Sat Jul 08 2017 stephane de Labrusse <stephdl@de-labrusse.fr> 0.0.3-1.ns6
 - Added YumCron_Description
 - you can define when the job starts by randomWait

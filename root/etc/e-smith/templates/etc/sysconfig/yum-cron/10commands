@@ -8,6 +8,8 @@ my $property = ${'yum-cron'}{'customParam'} || '';
 return 'YUM_PARAMETER=' if ($property eq '');
 
 foreach my $parameter (split(/,/, $property)) {
+    #add wildcard
+    $parameter = $parameter . '*';
     push @customParam , $parameter;
     #sort yum parameter array
     %seen = ();
