@@ -64,7 +64,7 @@ class YumCron extends \Nethgui\Controller\Collection\AbstractAction //implements
 
             $forwards = $this->parameters['customParam'];
             if($forwards) {
-                $paramValidator = $this->createValidator(Validate::USERNAME);
+                $paramValidator = $this->createValidator()->regexp('/^[\?\*A-Za-z0-9][-\.\?\*\+\w]*$/');
                 foreach(explode(',', $forwards) as $param) {
                     if( !$paramValidator->evaluate($param)) {
                         $report->addValidationErrorMessage($this, 'customParam',

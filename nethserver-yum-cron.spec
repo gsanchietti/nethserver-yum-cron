@@ -1,7 +1,7 @@
 Summary: nethserver - configure yum-cron
 %define name nethserver-yum-cron
 Name: %{name}
-%define version 0.0.4
+%define version 0.0.5
 %define release 1
 Version: %{version}
 Release: %{release}%{?dist}
@@ -18,6 +18,10 @@ BuildArch: noarch
 configure yum-cron for automatic update
 
 %changelog
+* Sat Jul 15 2017 stephane de Labrusse <stephdl@de-labrusse.fr> 0.0.5-1.ns6
+- Sanitise the custom yum exclusion
+- code from dnutan
+
 * Wed Jul 12 2017 stephane de Labrusse <stephdl@de-labrusse.fr> 0.0.4-1.ns6
 - Sanitise the custom yum exclusion
 
