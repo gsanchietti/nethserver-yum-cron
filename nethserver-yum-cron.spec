@@ -20,7 +20,7 @@ configure yum-cron for automatic update
 %changelog
 * Sat Jul 15 2017 stephane de Labrusse <stephdl@de-labrusse.fr> 0.0.5-1.ns6
 - Sanitise the custom yum exclusion
-- code from dnutan
+- Code from dnutan <dnutan@openaliasbox.org>
 
 * Wed Jul 12 2017 stephane de Labrusse <stephdl@de-labrusse.fr> 0.0.4-1.ns6
 - Sanitise the custom yum exclusion
