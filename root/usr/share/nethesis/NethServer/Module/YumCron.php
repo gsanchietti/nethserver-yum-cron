@@ -20,17 +20,13 @@ class YumCron extends \Nethgui\Controller\Collection\AbstractAction //implements
     public function initialize()
     {
         parent::initialize();
-     $validation = $this->createValidator()->memberOf('yes','no');
-     $command = $this->createValidator()->memberOf('default','security',
-         'security-severity:Critical','minimal','minimal-security',
-         'minimal-security-severity:Critical');
+        $validation = $this->createValidator()->memberOf('yes','no');
 
-     $this->declareParameter('messages', $validation, array('configuration', 'yum-cron', 'messages'));
-     $this->declareParameter('download', $validation, array('configuration', 'yum-cron', 'download'));
-     $this->declareParameter('applyUpdate', $validation, array('configuration', 'yum-cron', 'applyUpdate'));
-     $this->declareParameter('customMail', Validate::ANYTHING, array('configuration', 'yum-cron', 'customMail'));
-     $this->declareParameter('status', Validate::SERVICESTATUS, array('configuration', 'yum-cron', 'status'));
-     $this->declareParameter('command', $command, array('configuration', 'yum-cron', 'command'));
+        $this->declareParameter('messages', $validation, array('configuration', 'yum-cron', 'messages'));
+        $this->declareParameter('download', $validation, array('configuration', 'yum-cron', 'download'));
+        $this->declareParameter('applyUpdate', $validation, array('configuration', 'yum-cron', 'applyUpdate'));
+        $this->declareParameter('customMail', Validate::ANYTHING, array('configuration', 'yum-cron', 'customMail'));
+        $this->declareParameter('status', Validate::SERVICESTATUS, array('configuration', 'yum-cron', 'status'));
     }
 
 
@@ -71,14 +67,6 @@ class YumCron extends \Nethgui\Controller\Collection\AbstractAction //implements
         if(isset($this->parameters['customMail'])) {
             $view['customMail'] = implode("\r\n", explode(',', $this->parameters['customMail']));
         }
-        $view['commandDatasource'] = \Nethgui\Renderer\AbstractRenderer::hashToDatasource(array(
-                 'default' => $view->translate('default'),
-                 'security' => $view->translate('security'),
-                 'security-severity:Critical' => $view->translate('security-severity:Critical'),
-                 'minimal' => $view->translate('minimal'),
-                 'minimal-security' => $view->translate('minimal-security'),
-                 'minimal-security-severity:Critical' => $view->translate('minimal-security-severity:Critical'),));
-
     }
 
     public function onParametersSaved($changes)
