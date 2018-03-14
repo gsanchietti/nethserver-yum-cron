@@ -1,22 +1,46 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
+
+#
+# Copyright (C) 2017 Stephane de Labrusse <stephdl@de-labrusse.fr>
+# Copyright (C) 2018 Nethesis S.r.l.
+# http://www.nethesis.it - nethserver@nethesis.it
+#
+# This script is part of NethServer.
+#
+# NethServer is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License,
+# or any later version.
+#
+# NethServer is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with NethServer.  If not, see COPYING.
+#
 
 use esmith::Build::CreateLinks qw(:all);
 
-#--------------------------------------------------
-## functions for manager panel
-##--------------------------------------------------
+#
+# nethserver-yum-cron-update event
+#
 
-my $event = 'nethserver-yum-cron-update';
-event_actions ( $event, 'initialize-default-databases' => '00');
+event_actions('nethserver-yum-cron-update', qw(
+    initialize-default-databases 00
+));
 
-#Template to expand
-templates2events("/etc/yum/yum-cron.conf", qw ( 
-    nethserver-yum-cron-update
-    nethserver-yum-cron-save
-    ));
+event_templates('nethserver-yum-cron-update', qw(
+    /etc/yum/yum-cron.conf
+    /etc/cron.hourly/jobs.deny
+));
 
-# services to launch on event
-foreach my $event (qw (nethserver-yum-cron-save nethserver-yum-cron-update)) {
-event_services($event,
-    'yum-cron'=> 'restart');
-}
+#
+# nethserver-yum-cron-save event
+#
+
+event_templates('nethserver-yum-cron-save', qw(
+    /etc/yum/yum-cron.conf
+));
+
