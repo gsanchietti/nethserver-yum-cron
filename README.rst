@@ -21,8 +21,6 @@ Database
 Properties:
 
 - ``applyUpdate``: can be ``yes`` or ``no``. If set to ``yes``, downloaded updates will be installed
-- ``command``: (NOT SUPPORTED by CentOS nor NethServer repository). Select the type of updates to be downloaded.
-  Can be: ``default``, ``security``, ``security-severity:Critical``, ``minimal``, ``minimal-security``, ``minimal-security-severity:Critical'``
 - ``customMail``: comma-separated list of extra mail recipients, as default a mail will be sent to root
 - ``download``: can be ``yes`` or ``no``. If set to ``yes``, download new package updates
 - ``messages``: can be ``yes`` or ``no``. Whether a message should be emitted when updates are available
@@ -35,7 +33,6 @@ Database example: ::
 
  yum-cron=service
     applyUpdate=yes
-    command=default
     customMail=
     download=no
     messages=no
