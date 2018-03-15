@@ -1,8 +1,9 @@
 {
-# We want to remove ${'yum-cron'}{'command'}
-# in later release it can be removed
-# introduced in version 0.1.7.el7
-use esmith::ConfigDB;
-my $db = esmith::ConfigDB->open;
-$db->get_prop_and_delete('yum-cron', 'command');
+    # We want to remove ${'yum-cron'}{'command'}
+    # in later release it can be removed
+    # introduced in version 0.1.7.el7
+
+    $DB->get_prop_and_delete('yum-cron', 'command');
+
+    '';
 }
