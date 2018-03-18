@@ -6,7 +6,7 @@
 # minimal                            = yum --bugfix update-minimal
 # minimal-security                   = yum --security update-minimal
 # minimal-security-severity:Critical =  --sec-severity=Critical update-minimal
-update_cmd = {${'yum-cron'}{'command'} || 'default'}
+update_cmd = default
 
 # Whether a message should be emitted when updates are available,
 # were downloaded, or applied.
