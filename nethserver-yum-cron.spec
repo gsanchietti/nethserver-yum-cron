@@ -1,6 +1,6 @@
 Summary: nethserver - configure yum-cron
 Name: nethserver-yum-cron
-Version: 0.1.7
+Version: 1.0.0
 Release: 1%{?dist}
 License: GPL
 URL: %{url_prefix}/%{name}
@@ -38,6 +38,9 @@ rm -rf %{buildroot}
 %doc COPYING
 
 %changelog
+* Mon Mar 19 2018 Davide Principi <davide.principi@nethesis.it> - 1.0.0-1
+- Implement clients for NethServer Subscriptions - NethServer/dev#5425
+
 * Sat Jul 08 2017 stephane de Labrusse <stephdl@de-labrusse.fr> 0.1.7-1.ns7
 - Added YumCron_Description
 - you can define when the job starts by randomWait
