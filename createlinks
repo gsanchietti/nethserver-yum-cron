@@ -44,3 +44,11 @@ event_templates('nethserver-yum-cron-save', qw(
     /etc/yum/yum-cron.conf
 ));
 
+#
+# ns-release-lock event
+#
+
+event_templates('ns-release-lock', qw(
+    /etc/yum/yum-cron.conf
+));
+
